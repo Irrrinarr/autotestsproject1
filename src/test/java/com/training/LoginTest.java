@@ -39,8 +39,10 @@ public class LoginTest {
         loginButton.click();
         WebElement errorMessage = driver.findElement(By.xpath("//h3[@data-test='error']"));
 
-        while (!driver.findElement(By.xpath(botLogo)).isDisplayed())
-                checkErrorMessage(errorMessage.getText());
+//        while (!driver.findElement(By.xpath(botLogo)).isDisplayed())
+//        checkErrorMessage(errorMessage.getText());
+        while (!driver.getCurrentUrl().contains("inventory"))
+            checkErrorMessage(errorMessage.getText());
 
 
         List<WebElement> azButtonsList = driver.findElements(By.cssSelector(".btn_inventory"));
