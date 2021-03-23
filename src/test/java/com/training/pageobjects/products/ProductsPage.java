@@ -1,8 +1,7 @@
 package com.training.pageobjects.products;
 
-import com.training.pageobjects.SaucedemoParentClass;
+import com.training.pageobjects.helpers.Basics;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,10 +9,14 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class ProductsPage extends SaucedemoParentClass {
-    WebDriver driver = new ChromeDriver();
+public class ProductsPage extends Basics {
+
+    public ProductsPage(WebDriver driver) {
+        super(driver);
+    }
 
     public ProductsPage fillInBasket() {
+
         List<WebElement> azButtonsList = driver.findElements(By.cssSelector(".btn_inventory"));
         azButtonsList.get(1).click();
 
@@ -30,4 +33,5 @@ public class ProductsPage extends SaucedemoParentClass {
         return this;
     }
 }
+
 
