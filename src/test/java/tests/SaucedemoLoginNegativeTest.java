@@ -1,11 +1,11 @@
 package tests;
 
-import com.training.pageobjects.helpers.Testing;
+import com.training.pageobjects.helpers.TestBase;
 import com.training.pageobjects.login.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SaucedemoLoginNegativeTest extends Testing {
+public class SaucedemoLoginNegativeTest extends TestBase {
 
     @Test
     public void LoginWrongPsswrdTest() {

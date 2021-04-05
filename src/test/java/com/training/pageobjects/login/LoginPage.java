@@ -1,12 +1,11 @@
 package com.training.pageobjects.login;
 
-import com.training.pageobjects.helpers.Basics;
-import org.openqa.selenium.By;
+import com.training.pageobjects.helpers.PagesBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends Basics {
+public class LoginPage extends PagesBase {
     @FindBy(id="user-name")
     public WebElement userNameField;
     @FindBy(id="password")
@@ -38,6 +37,12 @@ public class LoginPage extends Basics {
         }
 
         loginButton.click();
+    }
+
+    public void correctLoginPassword(){
+            userNameField.sendKeys("standard_user");
+            passwordForAllUsers.sendKeys("secret_sauce");
+            loginButton.click();
     }
     public void wrongLoginPassword() {
         userNameField.sendKeys("standard_user");
