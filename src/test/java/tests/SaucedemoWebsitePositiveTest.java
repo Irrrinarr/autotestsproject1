@@ -8,7 +8,7 @@ import com.training.pageobjects.products.ProductsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SaucedemoWebsiteTest extends Testing {
+public class SaucedemoWebsitePositiveTest extends Testing {
 
     @Test
     public void saucedemoWebsiteTest() {

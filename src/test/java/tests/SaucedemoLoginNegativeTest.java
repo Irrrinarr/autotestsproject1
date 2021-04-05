@@ -5,7 +5,7 @@ import com.training.pageobjects.login.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SaucedemoNegativeLoginTest extends Testing {
+public class SaucedemoLoginNegativeTest extends Testing {
 
     @Test
     public void LoginWrongPsswrdTest() {
