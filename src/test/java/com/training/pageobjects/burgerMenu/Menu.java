@@ -26,10 +26,6 @@ public class Menu extends Basics {
         driverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#logout_sidebar_link")));
         logoutButton.click();
 
-
-//        JavascriptExecutor js = (JavascriptExecutor)driver;
-//        WebElement logoutButton = driver.findElement(By.cssSelector("a#logout_sidebar_link"));
-//        js.executeScript("arguments[0].click();", logoutButton);
     }
 
 

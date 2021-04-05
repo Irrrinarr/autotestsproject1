@@ -4,26 +4,27 @@ import com.training.pageobjects.helpers.Basics;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends Basics {
-    public WebElement userNameField = driver.findElement(By.id("user-name"));
-    public WebElement passwordForAllUsers = driver.findElement(By.id("password"));
-    public WebElement loginButton = driver.findElement(By.id("login-button"));
+    @FindBy(id="user-name")
+    public WebElement userNameField;
+    @FindBy(id="password")
+    public WebElement passwordForAllUsers;
+    @FindBy(id="login-button")
+    public WebElement loginButton;
+    @FindBy(xpath = "//h3[@data-test='error']")
+    public WebElement errorMessage;
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
-    public LoginPage sendCredentialsCheckingError() {
+    public void sendCredentialsCheckingError() {
         loginButton.click();
-        WebElement errorMessage = driver.findElement(By.xpath("//h3[@data-test='error']"));
 
         while (!driver.getCurrentUrl().contains("inventory"))
             checkErrorMessage(errorMessage.getText());
-
-        return this;
     }
-
     private void checkErrorMessage(String errorMessage) {
         if (errorMessage.contains("Username is required"))
             userNameField.sendKeys("locked_out_user");
@@ -38,13 +39,10 @@ public class LoginPage extends Basics {
 
         loginButton.click();
     }
-
-    public LoginPage wrongLoginPassword() {
+    public void wrongLoginPassword() {
         userNameField.sendKeys("standard_user");
         passwordForAllUsers.sendKeys("password");
         loginButton.click();
-
-        return this;
     }
 }
 
