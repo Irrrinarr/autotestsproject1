@@ -6,11 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PagesBase {
-    @FindBy(id="user-name")
+    @FindBy(id = "user-name")
     public WebElement userNameField;
-    @FindBy(id="password")
+    @FindBy(id = "password")
     public WebElement passwordForAllUsers;
-    @FindBy(id="login-button")
+    @FindBy(id = "login-button")
     public WebElement loginButton;
     @FindBy(xpath = "//h3[@data-test='error']")
     public WebElement errorMessage;
@@ -38,16 +38,11 @@ public class LoginPage extends PagesBase {
 
         loginButton.click();
     }
-
-    public void correctLoginPassword(){
-            userNameField.sendKeys("standard_user");
-            passwordForAllUsers.sendKeys("secret_sauce");
-            loginButton.click();
-    }
-    public void wrongLoginPassword() {
-        userNameField.sendKeys("standard_user");
-        passwordForAllUsers.sendKeys("password");
+    public void login(String username, String password) {
+        userNameField.sendKeys(username);
+        passwordForAllUsers.sendKeys(password);
         loginButton.click();
+
     }
 }
 
