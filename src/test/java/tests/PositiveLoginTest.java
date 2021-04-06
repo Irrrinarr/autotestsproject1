@@ -19,10 +19,5 @@ public class PositiveLoginTest extends TestBase {
         Assert.assertTrue(url.contains("/inventory.html"));
         menuPage.burgerMenu();
         menuPage.logout();
-
-
-
-
     }
-
 }

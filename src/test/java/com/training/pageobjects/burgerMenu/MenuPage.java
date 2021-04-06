@@ -21,7 +21,6 @@ public class MenuPage extends PagesBase {
     public MenuPage(WebDriver driver) {
         super(driver);
     }
-
     public void burgerMenu() {
         menuButton.click();
     }
@@ -32,6 +31,4 @@ public class MenuPage extends PagesBase {
         logoutButton.click();
 
     }
-
-
 }
